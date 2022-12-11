@@ -18,6 +18,8 @@ server.get("/customers/:id", (req, res) => {
     const customer = customers.find(item => item.id === id)
     const status = customer ? 200 : 404
 
+    console.log("GET : /customers/:id ", JSON.stringify(customer)) //Utilizado para fazer DEBUG na aplicação. 
+
     return res.status(status).json(customer)
 })
 
